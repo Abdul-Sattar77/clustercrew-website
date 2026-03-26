@@ -23,6 +23,14 @@ const teamMembers = [
     github: "https://github.com/adeel-hussain786"
   },
   { 
+    name: "Abdul Sattar", 
+    role: "UI/UX & Frontend Lead", 
+    image: "/team/Abdul Sattar.jpeg", 
+    skills: ["Graphic Design", "UI/UX Strategy", "AI Integration"],
+    linkedin: "https://www.linkedin.com/in/abdul-sattar-141602262?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    github: "https://github.com/Abdul-Sattar77"
+  },
+  { 
     name: "Babar Rahim", 
     role: "MERN Stack Engineer", 
     image: "/team/Babar Rahim.jpeg", 
@@ -38,14 +46,7 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/mohammad-arsalan-83631b2aa",
     github: "https://github.com/ArsalanTheCoder"
   },
-  { 
-    name: "Abdul Sattar", 
-    role: "UI/UX & Frontend Lead", 
-    image: "/team/Abdul Sattar.jpeg", 
-    skills: ["Graphic Design", "UI/UX Strategy", "AI Integration"],
-    linkedin: "https://www.linkedin.com/in/abdul-sattar-141602262?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-    github: "https://github.com/Abdul-Sattar77"
-  },
+  
 ];
 
 export default function Team() {
