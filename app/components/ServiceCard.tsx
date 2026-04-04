@@ -1,55 +1,73 @@
 "use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
-interface ServiceProps {
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import Link from "next/link";
+
+const serviceRoutes: Record<string, string> = {
+  "AI Agents": "/services#ai-automation-agents",
+  "Workflow Automation": "/services#ai-automation-agents",
+  "Web Development": "/services#web-development",
+  "Mobile Apps": "/services#app-development",
+  "SaaS Products": "/services#machine-learning",
+  "Brand & UI/UX": "/services#graphic-design",
+};
+
+export function ServiceCard({
+  icon,
+  title,
+  desc,
+  delay,
+}: {
+  icon: string;
   title: string;
   desc: string;
-  image: string;
-}
+  delay: number;
+}) {
+  const [hovered, setHovered] = useState(false);
+  const href = serviceRoutes[title] ?? "/services";
 
-export default function ServiceCard({ title, desc, image }: ServiceProps) {
   return (
-    <motion.div 
-      whileHover={{ y: -10 }}
-      className="group p-8 md:p-10 bg-white border border-gray-100 rounded-[35px] hover:shadow-[0_40px_80px_-15px_rgba(15,23,42,0.1)] transition-all duration-500 flex flex-col h-full relative overflow-hidden"
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="relative p-8 rounded-3xl border border-slate-100/50 bg-white/80 hover:border-[#facc15]/40 hover:shadow-2xl hover:shadow-[#facc15]/10 backdrop-blur-sm transition-all duration-500 overflow-hidden cursor-default group"
     >
-      {/* Background Glow */}
-      <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#facc15]/5 blur-3xl rounded-full group-hover:bg-[#facc15]/15 transition-all duration-500" />
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-gradient-to-br from-[#facc15]/10 to-transparent rounded-3xl"
+          />
+        )}
+      </AnimatePresence>
 
-      {/* Image Container (Thumbnail) */}
-      <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-50 rounded-2xl mb-8 flex items-center justify-center overflow-hidden border border-gray-100 group-hover:border-[#facc15]/40 transition-all">
-        <Image 
-          src={image} 
-          alt={title} 
-          width={80} 
-          height={80} 
-          className="w-full h-full object-cover group-hover:scale-115 transition-transform duration-500"
-          // If you don't have images yet, this will show a placeholder or handle the error
-          onError={(e) => {
-            (e.target as any).src = "https://via.placeholder.com/80?text=AI"; 
-          }}
-        />
-      </div>
+      <motion.div
+        animate={{ scale: hovered ? 1.15 : 1, rotate: hovered ? 5 : 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        className="text-3xl mb-5 inline-block"
+      >
+        {icon}
+      </motion.div>
 
-      <h3 className="text-2xl font-black text-[#0f172a] mb-4 tracking-tight group-hover:text-[#facc15] transition-colors">
-        {title}
-      </h3>
-      
-      <p className="text-gray-500 leading-relaxed text-base md:text-lg mb-8 flex-grow">
-        {desc}
-      </p>
+      <h3 className="text-slate-900 font-black text-xl mb-3 tracking-tight">{title}</h3>
+      <p className="text-slate-600 text-sm leading-relaxed font-medium">{desc}</p>
 
-      {/* Card Footer */}
-      <div className="pt-6 border-t border-gray-50 flex items-center justify-between">
-        <span className="text-[10px] font-black uppercase tracking-widest text-gray-300 group-hover:text-[#0f172a] transition-colors">
-          View Details
-        </span>
-        <div className="w-10 h-10 bg-[#0f172a] text-white rounded-full flex items-center justify-center group-hover:bg-[#facc15] group-hover:text-[#0f172a] transition-all duration-300 shadow-lg">
-          <ArrowUpRight size={20} />
-        </div>
-      </div>
+      {/* ── Working "Learn more" link ── */}
+      <Link href={href}>
+        <motion.div
+          animate={{ x: hovered ? 4 : 0, opacity: hovered ? 1 : 0.5 }}
+          className="mt-5 text-[#facc15] text-xs font-black uppercase tracking-widest flex items-center gap-2 w-fit"
+        >
+          Learn more <span>→</span>
+        </motion.div>
+      </Link>
     </motion.div>
   );
 }

@@ -2,42 +2,49 @@
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ServiceCard from "../components/ServiceCard";
+import { ServiceCard } from "../components/ServiceCard";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 const services = [
   { 
+    id: "machine-learning",
     title: "Machine Learning", 
     image: "/images/s1.png", 
     desc: "Train custom models on your private data. From regression to complex neural networks, we build systems that learn and evolve." 
   },
   { 
+    id: "nlp-chatbots",
     title: "NLP & Chatbots", 
     image: "/images/s4.png",
     desc: "Next-gen conversational AI using RAG (Retrieval-Augmented Generation) for pinpoint accuracy in customer support." 
   },
   { 
+    id: "app-development",
     title: "App Development", 
     image: "/images/s-app.png", 
     desc: "High-performance iOS & Android apps integrated with AI agents, providing seamless user experiences with real-time intelligence." 
   },
   { 
+    id: "computer-vision",
     title: "Computer Vision", 
     image: "/images/s3.png",
     desc: "Object detection, facial recognition, and automated quality inspection systems for industrial and security needs." 
   },
   { 
+    id: "ai-automation-agents",
     title: "AI Automation Agents", 
     image: "/images/s2.png",
     desc: "Autonomous agents that can navigate browsers, manage emails, and handle complex multi-step workflows 24/7." 
   },
   { 
+    id: "web-development",
     title: "Web Development", 
     image: "/images/s_web.png",
     desc: "Ultra-fast Next.js applications with Framer Motion animations and high-conversion UI/UX design." 
   },
   { 
+    id: "graphic-design",
     title: "Graphic Design", 
     image: "/images/s_gr.png",
     desc: "Premium branding kits, cinematic 3D renders, and social media assets that make your brand stand out." 
@@ -78,10 +85,12 @@ export default function ServicesPage() {
           {services.map((service, i) => (
             <motion.div
               key={i}
+              id={service.id}           // ← yeh scroll anchor hai
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
+              className="scroll-mt-32"  // ← fixed navbar ke liye offset
             >
               <ServiceCard title={service.title} desc={service.desc} image={service.image} />
             </motion.div>
