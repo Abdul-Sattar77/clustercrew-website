@@ -139,11 +139,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   className="w-full p-4 bg-gray-50 rounded-xl"
                 >
-                  <option value="default">Select Service</option>
-                  <option>Web Development</option>
-                  <option>AI Solutions</option>
-                  <option>Mobile Apps</option>
-                </select>
+                  <option value="default" disabled>Select Service</option> <option value="AI Agents & Automation">AI Agents & Automation</option> <option value="Web Development">Web Development</option> <option value="Mobile App Development">Mobile App Development</option> <option value="UI/UX & Graphic Design">UI/UX & Graphic Design</option> <option value="Machine Learning / NLP">Machine Learning / NLP</option> <option value="Full-Stack SaaS">Full-Stack SaaS</option> <option value="Other">Other</option> </select>
 
                 <textarea
                   name="message"
