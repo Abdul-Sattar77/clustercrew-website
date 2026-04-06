@@ -100,36 +100,19 @@ export default function ContactPage() {
           </motion.div>
 
           {/* ── RIGHT: Form ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white p-6 sm:p-10 md:p-12 rounded-[32px] sm:rounded-[50px] shadow-2xl border border-gray-100"
-          >
-            {status === "success" ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center text-center py-12 gap-6"
-              >
-                <div className="w-20 h-20 bg-[#facc15]/10 rounded-full flex items-center justify-center">
-                  <CheckCircle size={40} className="text-[#facc15]" />
-                </div>
-                <h3 className="text-3xl font-black text-[#0f172a] tracking-tight">Message Received!</h3>
-                <p className="text-gray-500 max-w-xs">
-                  Your inquiry has been sent directly to our team. We'll get back to you shortly!
-                </p>
-                <button
-                  onClick={() => { setStatus("idle"); setForm({ name: "", email: "", service: "default", message: "" }); }}
-                  className="px-8 py-3 bg-[#0f172a] text-white font-black rounded-2xl hover:bg-[#facc15] hover:text-[#0f172a] transition-all text-sm uppercase tracking-widest"
-                >
-                  Send Another
-                </button>
-              </motion.div>
-            ) : (
-              <form className="space-y-6" onSubmit={handleSubmit}>
+<motion.div className="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border">
 
-                {/* Full Name */}
+            {status === "success" ? (
+              <div className="text-center py-10">
+                <CheckCircle size={40} className="mx-auto text-[#facc15]" />
+                <h3 className="text-2xl font-bold mt-4">Message Sent!</h3>
+                <p className="text-gray-500 mt-2">
+                  Your message has been sent to our email. We'll reply soon.
+                </p>
+              </div>
+            ) : (
+              <form className="space-y-5" onSubmit={handleSubmit}>
+
                 <input
                   type="text"
                   name="name"
@@ -137,75 +120,51 @@ export default function ContactPage() {
                   onChange={handleChange}
                   placeholder="Full Name"
                   required
-                  className="w-full p-6 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-[#facc15] border border-transparent focus:bg-white transition-all font-medium"
+                  className="w-full p-4 bg-gray-50 rounded-xl"
                 />
 
-                {/* Email */}
                 <input
                   type="email"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="Your Email Address"
+                  placeholder="Email"
                   required
-                  className="w-full p-6 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-[#facc15] border border-transparent focus:bg-white transition-all font-medium"
+                  className="w-full p-4 bg-gray-50 rounded-xl"
                 />
 
-                {/* Service Select */}
-                <div className="relative">
-                  <select
-                    name="service"
-                    value={form.service}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-6 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-[#facc15] appearance-none cursor-pointer border border-transparent focus:bg-white transition-all font-medium text-gray-600"
-                  >
-                    <option value="default" disabled>Select Service</option>
-                    <option value="AI Agents & Automation">AI Agents & Automation</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value="Mobile App Development">Mobile App Development</option>
-                    <option value="UI/UX & Graphic Design">UI/UX & Graphic Design</option>
-                    <option value="Machine Learning / NLP">Machine Learning / NLP</option>
-                    <option value="Full-Stack SaaS">Full-Stack SaaS</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <ChevronDown className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={20} />
-                </div>
+                <select
+                  name="service"
+                  value={form.service}
+                  onChange={handleChange}
+                  className="w-full p-4 bg-gray-50 rounded-xl"
+                >
+                  <option value="default">Select Service</option>
+                  <option>Web Development</option>
+                  <option>AI Solutions</option>
+                  <option>Mobile Apps</option>
+                </select>
 
-                {/* Message */}
                 <textarea
                   name="message"
                   value={form.message}
                   onChange={handleChange}
-                  rows={4}
-                  placeholder="Share your project vision..."
-                  required
-                  className="w-full p-6 bg-gray-50 rounded-2xl outline-none focus:ring-2 focus:ring-[#facc15] resize-none border border-transparent focus:bg-white transition-all font-medium"
+                  placeholder="Message"
+                  className="w-full p-4 bg-gray-50 rounded-xl"
                 />
 
+                <button
+                  type="submit"
+                  className="w-full py-4 bg-[#0f172a] text-white rounded-xl font-bold"
+                >
+                  {status === "loading" ? "Sending..." : "Launch Inquiry 🚀"}
+                </button>
+
                 {status === "error" && (
-                  <p className="text-red-500 text-sm font-bold text-center">
-                    ❌ Something went wrong. Please try again or contact us on WhatsApp.
+                  <p className="text-red-500 text-sm text-center">
+                    Something went wrong. Try again.
                   </p>
                 )}
-
-                <motion.button
-                  type="submit"
-                  disabled={status === "loading"}
-                  whileHover={{ scale: status === "loading" ? 1 : 1.02 }}
-                  whileTap={{ scale: status === "loading" ? 1 : 0.98 }}
-                  className="w-full py-6 bg-[#0f172a] text-white font-black rounded-2xl hover:bg-[#facc15] hover:text-[#0f172a] transition-all flex items-center justify-center gap-3 shadow-xl text-lg uppercase tracking-tight disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {status === "loading" ? (
-                    <><Loader2 size={22} className="animate-spin" /> Sending...</>
-                  ) : (
-                    "Launch Inquiry 🚀"
-                  )}
-                </motion.button>
-
-                <p className="text-center text-[10px] text-gray-400 font-bold uppercase tracking-widest">
-                  Sent directly to our email & WhatsApp — no extra steps
-                </p>
               </form>
             )}
           </motion.div>
