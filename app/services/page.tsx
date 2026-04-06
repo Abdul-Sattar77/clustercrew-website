@@ -21,7 +21,7 @@ export default function ServicesPage() {
     <div className="bg-[#fcfcfd] text-[#0f172a] min-h-screen">
       <Navbar />
 
-      <div className="max-w-screen-2xl mx-auto px-6 md:px-8 pt-32 md:pt-44 pb-32">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-32 md:pt-44 pb-16 sm:pb-24 md:pb-32">
         {/* Header Section */}
         <div className="text-center mb-16 md:mb-24">
           <motion.div
@@ -38,11 +38,11 @@ export default function ServicesPage() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-8xl font-black tracking-tighter leading-[1.1] md:leading-none"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter leading-[1.1] md:leading-none"
           >
             Our <span className="text-gray-300 italic px-2">Core</span> <br /> Solutions
           </motion.h1>
-          <p className="text-lg md:text-xl text-gray-500 mt-6 md:mt-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-gray-500 mt-6 md:mt-8 max-w-2xl mx-auto leading-relaxed">
             We bridge the gap between complex AI research and practical, high-impact business applications.
           </p>
         </div>

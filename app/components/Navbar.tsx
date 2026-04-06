@@ -29,11 +29,10 @@ export default function Navbar() {
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Team", href: "/team" },
-    { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
 
-  const whatsappNumber = "923190453945";
+  const whatsappNumber = "12269726927";
   const message = "Hi Cluster Crew! I want to discuss a new project.";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
@@ -117,18 +116,18 @@ export default function Navbar() {
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
-            className="fixed inset-0 bg-black z-[110] flex flex-col p-12 lg:hidden"
+            className="fixed inset-0 bg-black z-[110] flex flex-col p-6 sm:p-10 lg:hidden"
           >
-            <div className="flex justify-between items-center mb-20">
+            <div className="flex justify-between items-center mb-8 sm:mb-12">
               <div className="text-[#facc15] font-black text-2xl uppercase tracking-tighter">ClusterCrew</div>
               <button onClick={() => setIsOpen(false)} className="p-4 bg-white/5 rounded-full text-white">
                 <X size={32} />
               </button>
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4 sm:gap-6">
               {navLinks.map((link, i) => (
                 <motion.div key={link.name} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
-                  <Link href={link.href} onClick={() => setIsOpen(false)} className="text-5xl font-black text-white hover:text-[#facc15] transition-colors">
+                  <Link href={link.href} onClick={() => setIsOpen(false)} className="text-2xl sm:text-3xl font-black text-white hover:text-[#facc15] transition-colors">
                     {link.name}
                   </Link>
                 </motion.div>

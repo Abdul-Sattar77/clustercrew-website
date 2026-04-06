@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Mail, MapPin, Phone, ChevronDown, MessageCircle, CheckCircle, Loader2 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "923190453945";
+const WHATSAPP_NUMBER = "12269726927";
 const REAL_EMAIL = "clustercrew5@gmail.com";
 
 export default function ContactPage() {
@@ -45,15 +45,15 @@ export default function ContactPage() {
 
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#facc15]/5 rounded-full blur-[120px] -z-10" />
 
-      <main className="max-w-screen-2xl mx-auto px-8 pt-44 pb-32 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <main className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-36 md:pt-44 pb-16 sm:pb-32 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-start lg:items-center">
 
           {/* ── LEFT ── */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-8xl font-black tracking-tighter leading-none mb-8 text-[#0f172a]">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-none mb-5 sm:mb-8 text-[#0f172a]">
               Let's <br /> <span className="text-[#facc15]">Talk.</span>
             </h1>
-            <p className="text-gray-500 text-lg mb-12 max-w-md">
+            <p className="text-gray-500 text-base sm:text-lg mb-8 sm:mb-12 max-w-md">
               Have a project in mind? Fill the form and we'll receive it instantly — no extra steps.
             </p>
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Email</p>
-                  <p className="font-bold text-xl text-[#0f172a] group-hover:text-[#facc15] transition-colors">{REAL_EMAIL}</p>
+                  <p className="font-bold text-base sm:text-lg md:text-xl text-[#0f172a] group-hover:text-[#facc15] transition-colors">{REAL_EMAIL}</p>
                 </div>
               </a>
 
@@ -74,7 +74,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">WhatsApp / Call</p>
-                  <p className="font-bold text-xl text-[#0f172a] group-hover:text-[#25D366] transition-colors">+92 319 0453945</p>
+                  <p className="font-bold text-base sm:text-lg md:text-xl text-[#0f172a] group-hover:text-[#25D366] transition-colors">+1 (226) 972-6927</p>
                 </div>
               </a>
 
@@ -84,8 +84,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Location</p>
-                  <p className="font-bold text-xl text-[#0f172a]">Gulistan-e-Johar, Karachi</p>
-                  <p className="text-sm text-gray-400 font-medium">Sindh, Pakistan — 75290</p>
+                  <p className="font-bold text-base sm:text-lg md:text-xl text-[#0f172a]">Kitchener Ontario Canada</p>
                 </div>
               </div>
             </div>
@@ -94,7 +93,7 @@ export default function ContactPage() {
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi ClusterCrew! I want to discuss a project.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-12 inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:shadow-[0_15px_30px_rgba(37,211,102,0.3)] transition-all active:scale-95"
+              className="mt-8 sm:mt-12 inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-2xl font-black text-sm uppercase tracking-widest hover:shadow-[0_15px_30px_rgba(37,211,102,0.3)] transition-all active:scale-95"
             >
               <MessageCircle size={20} /> Chat on WhatsApp
             </a>
@@ -105,7 +104,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white p-12 rounded-[50px] shadow-2xl border border-gray-100"
+            className="bg-white p-6 sm:p-10 md:p-12 rounded-[32px] sm:rounded-[50px] shadow-2xl border border-gray-100"
           >
             {status === "success" ? (
               <motion.div

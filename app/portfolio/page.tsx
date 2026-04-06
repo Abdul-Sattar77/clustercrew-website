@@ -95,17 +95,17 @@ export default function Portfolio() {
     <div className="bg-[#fcfcfd] min-h-screen font-sans relative">
       <Navbar />
       
-      <div className="max-w-screen-2xl mx-auto px-8 pt-44 pb-32">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 pt-24 sm:pt-36 md:pt-44 pb-16 sm:pb-24 md:pb-32">
         {/* HEADER */}
         <div className="text-center mb-16">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-7xl font-black tracking-tighter mb-6 text-[#0f172a]"
+            className="text-3xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-4 sm:mb-6 text-[#0f172a]"
           >
             Selected Work
           </motion.h1>
-          <p className="text-gray-500 text-xl max-w-2xl mx-auto">
+          <p className="text-gray-500 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
              An extensive portfolio showing expertise in AI development, Data Science, and Systems Engineering.
           </p>
           
@@ -115,7 +115,7 @@ export default function Portfolio() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-8 py-3 rounded-2xl font-bold transition-all duration-300 ${
+                className={`px-4 sm:px-8 py-2 sm:py-3 rounded-2xl font-bold text-sm sm:text-base transition-all duration-300 ${
                   filter === cat 
                   ? "bg-[#0f172a] text-white shadow-2xl scale-105" 
                   : "bg-white text-gray-400 hover:text-[#0f172a] border border-gray-100"
@@ -155,7 +155,7 @@ export default function Portfolio() {
                     </span>
                   </div>
                 </div>
-                <div className="p-10">
+                <div className="p-5 sm:p-8 md:p-10">
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-2xl font-black tracking-tight text-[#0f172a]">{project.title}</h3>
                     <div className="w-10 h-10 bg-[#facc15] rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">
@@ -211,11 +211,11 @@ export default function Portfolio() {
                 </div>
                 
                 {/* Modal Info Area */}
-                <div className="lg:w-1/2 p-10 lg:p-20 flex flex-col justify-center bg-white">
+                <div className="lg:w-1/2 p-6 sm:p-10 lg:p-16 flex flex-col justify-center bg-white">
                   <div className="inline-block bg-[#facc15] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-[#0f172a] mb-6 w-fit">
                     {selectedProject.category}
                   </div>
-                  <h2 className="text-5xl font-black text-[#0f172a] mb-8 tracking-tighter leading-tight">
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#0f172a] mb-4 sm:mb-8 tracking-tighter leading-tight">
                     {selectedProject.title}
                   </h2>
                   <p className="text-gray-500 text-lg leading-relaxed mb-12">

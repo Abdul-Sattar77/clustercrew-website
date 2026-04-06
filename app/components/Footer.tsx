@@ -37,7 +37,6 @@ const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Team", href: "/team" },
-  { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -56,42 +55,42 @@ const legalLinks = [
 ];
 
 export default function Footer() {
-  const whatsappNumber = "923190453945";
+  const whatsappNumber = "12269726927";
   const message = "Hi Cluster Crew! I want to discuss a new project.";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   const emailLink = "mailto:clustercrew5@gmail.com";
 
   return (
-    <footer className="relative bg-[#050505] text-white pt-32 pb-12 overflow-hidden border-t border-white/5">
+    <footer className="relative bg-[#050505] text-white pt-16 sm:pt-24 md:pt-32 pb-10 sm:pb-12 overflow-hidden border-t border-white/5">
       {/* Ambient glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#facc15]/5 blur-[150px] -z-0 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#facc15]/3 blur-[120px] -z-0 rounded-full -translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
-      <div className="max-w-screen-2xl mx-auto px-8 relative z-10">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* ── CTA Banner ── */}
-        <div className="mb-24 rounded-[32px] bg-[#facc15] p-12 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative">
+        <div className="mb-16 rounded-[24px] bg-[#facc15] p-6 sm:p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden relative">
           <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,rgba(0,0,0,0.03)_20px,rgba(0,0,0,0.03)_40px)]" />
           <div className="relative">
             <p className="text-[10px] font-black uppercase tracking-[0.4em] text-black/50 mb-2">Ready to build?</p>
-            <h3 className="text-4xl md:text-5xl font-black text-black tracking-tighter leading-none">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-black tracking-tighter leading-none">
               Let's ship something<br />extraordinary.
             </h3>
           </div>
-          <div className="relative flex gap-4 flex-wrap">
+          <div className="relative flex gap-3 flex-col xs:flex-row flex-wrap w-full md:w-auto">
             <Link href={whatsappLink} target="_blank"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-black text-white rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 shadow-xl active:scale-95">
+              className="inline-flex items-center gap-3 px-5 py-3 sm:px-8 sm:py-4 bg-black text-white rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300 shadow-xl active:scale-95">
               <MessageCircle size={18} /> WhatsApp
             </Link>
             <Link href={emailLink}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-black/10 text-black border-2 border-black/20 rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300 active:scale-95">
+              className="inline-flex items-center gap-3 px-5 py-3 sm:px-8 sm:py-4 bg-black/10 text-black border-2 border-black/20 rounded-2xl font-black text-[11px] uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all duration-300 active:scale-95">
               <Mail size={18} /> Email Us
             </Link>
           </div>
         </div>
 
         {/* ── Main Grid ── */}
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 mb-24">
+        <div className="grid lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-24 mb-16 sm:mb-24">
           
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-10">
@@ -103,7 +102,7 @@ export default function Footer() {
                 >
                   C
                 </motion.div>
-                <h2 className="text-4xl font-[1000] tracking-tighter uppercase text-white">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-[1000] tracking-tighter uppercase text-white">
                   Cluster<span className="text-[#facc15]">Crew</span>
                 </h2>
               </Link>
@@ -137,14 +136,14 @@ export default function Footer() {
               <div className="flex items-start gap-3 text-gray-500">
                 <MapPin size={16} className="text-[#facc15] mt-0.5 shrink-0" />
                 <p className="font-bold text-sm leading-snug">
-                  Gulistan-e-Johar, Karachi<br />Sindh, Pakistan — 75290
+                  Kitchener Ontario Canada
                 </p>
               </div>
             </div>
           </div>
 
           {/* Links Columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
             
             {/* Navigation */}
             <div className="space-y-8">

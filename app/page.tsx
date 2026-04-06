@@ -94,7 +94,7 @@ function MagBtn({ children, href, variant = "primary" }: { children: React.React
 
   const onLeave = useCallback(() => { x.set(0); y.set(0); }, [x, y]);
 
-  const base = "relative overflow-hidden px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-300 cursor-pointer shadow-xl hover:shadow-2xl active:scale-[0.98]";
+  const base = "relative overflow-hidden px-5 py-3 sm:px-8 sm:py-4 rounded-2xl font-black text-xs sm:text-sm uppercase tracking-widest transition-all duration-300 cursor-pointer shadow-xl hover:shadow-2xl active:scale-[0.98]";
   
   const styles = variant === "primary"
     ? `${base} text-slate-900 bg-gradient-to-r from-[#facc15]/95 to-[#f59e0b]/95 hover:from-[#facc15] hover:to-[#f59e0b] border border-white/50 backdrop-blur-sm`
@@ -146,7 +146,7 @@ function StatCard({ val, label, desc, i }: { val: string; label: string; desc: s
       <motion.p
         animate={{ scale: hovered ? 1.04 : 1 }}
         transition={{ type: "spring", stiffness: 300 }}
-        className="text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-2"
+        className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-2"
       >
         {val}
       </motion.p>
@@ -220,7 +220,7 @@ export default function Home() {
       <Navbar />
 
       {/* ═══ NEW HERO SECTION (Stripe/Linear Style) ═══ */}
-      <section className="relative min-h-screen flex items-center pt-28 pb-20 px-6 md:px-12 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-24 pb-16 px-4 sm:px-6 md:px-12 overflow-hidden">
 
         {/* Enhanced Background FX */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -240,7 +240,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-screen-2xl mx-auto w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-center">
 
             {/* ═══ LEFT: Content ═══ */}
             <motion.div 
@@ -275,7 +275,7 @@ export default function Home() {
                     }}
                     className="overflow-hidden"
                   >
-                    <h1 className={`font-black tracking-[-0.02em] leading-none ${i === 1 ? 'text-7xl md:text-8xl lg:text-9xl text-[#facc15]' : 'text-6xl md:text-7xl lg:text-8xl text-slate-900'}`}>
+                    <h1 className={`font-black tracking-[-0.02em] leading-none ${i === 1 ? 'text-5xl sm:text-6xl md:text-7xl lg:text-9xl text-[#facc15]' : 'text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-slate-900'}`}>
                       {word}
                     </h1>
                   </motion.div>
@@ -287,7 +287,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.6 }}
-                className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-lg font-medium"
+                className="text-base md:text-xl lg:text-2xl text-slate-600 leading-relaxed max-w-lg font-medium"
               >
                 We build autonomous AI agents and full-stack SaaS platforms that scale to millions. 
                 <span className="font-black text-slate-900">500+</span> companies trust us to ship faster.
@@ -368,7 +368,7 @@ export default function Home() {
                   rotate: { duration: 8, repeat: Infinity, ease: "easeInOut" },
                   scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="relative z-20 w-[320px] h-[420px] mx-auto lg:mr-0"
+                className="relative z-20 w-[220px] h-[290px] sm:w-[270px] sm:h-[360px] md:w-[320px] md:h-[420px] mx-auto lg:mr-0"
               >
                 <Image
                   src="/images/hero.png"
@@ -416,7 +416,7 @@ export default function Home() {
       </section>
 
       {/* ═══ STATS ═══ */}
-      <section className="py-32 px-6 md:px-12 relative overflow-hidden bg-slate-50/60">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden bg-slate-50/60">
         {/* Ghosted bg text */}
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
           <span className="text-[18vw] font-black tracking-tighter text-slate-900/[0.03] select-none">IMPACT</span>
@@ -429,7 +429,7 @@ export default function Home() {
             className="mb-16 text-center md:text-left"
           >
             <p className="text-[#facc15] text-[10px] font-black uppercase tracking-[0.5em] mb-3">Our impact</p>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-slate-900">
               Numbers that{" "}
               <span className="italic" style={{ WebkitTextStroke: "2px rgba(250,204,21,0.7)", color: "transparent" }}>matter</span>
             </h2>
@@ -445,7 +445,7 @@ export default function Home() {
       </section>
 
       {/* ═══ SERVICES ═══ */}
-      <section className="py-32 px-6 md:px-12 bg-gradient-to-br from-slate-50 via-white to-slate-50">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-gradient-to-br from-slate-50 via-white to-slate-50">
         <div className="max-w-screen-xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -454,7 +454,7 @@ export default function Home() {
             className="mb-16 max-w-2xl text-center mx-auto"
           >
             <p className="text-[#facc15] text-[10px] font-black uppercase tracking-[0.5em] mb-3">What we do</p>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-slate-900 mb-5">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-slate-900 mb-5">
               Services built for{" "}
               <span className="italic" style={{ WebkitTextStroke: "2px rgba(250,204,21,0.7)", color: "transparent" }}>scale</span>
             </h2>
@@ -476,7 +476,7 @@ export default function Home() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="py-32 px-6 md:px-12 relative overflow-hidden bg-slate-50/60">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden bg-slate-50/60">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
             animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.8, 0.4] }}
@@ -493,7 +493,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="text-[#facc15] text-[10px] font-black uppercase tracking-[0.5em] mb-6">Ready to scale?</p>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
+            <h2 className="text-3xl sm:text-4xl md:text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-slate-900 mb-6 leading-[0.9]">
               Let's build something <br />
               <span className="italic" style={{ WebkitTextStroke: "2px rgba(250,204,21,0.7)", color: "transparent" }}>extraordinary.</span>
             </h2>
