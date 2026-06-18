@@ -468,7 +468,7 @@ export default function Home() {
               { icon: "⚡", title: "Workflow Automation", desc: "Eliminate repetitive tasks with intelligent automation pipelines that run 24/7.",           delay: 0.1  },
               { icon: "🌐", title: "Web Development",     desc: "High-performance web platforms built with modern stacks, optimized for growth.",            delay: 0.2  },
               { icon: "📱", title: "Mobile Apps",         desc: "Native & cross-platform mobile apps that users love and businesses rely on.",               delay: 0.3  },
-              { icon: "📊", title: "SaaS Products",       desc: "From MVP to enterprise — we architect scalable SaaS systems that grow with you.",           delay: 0.4  },
+              { icon: "💻", title: "Desktop Apps",        desc: "Cross-platform installable desktop software built using Electron, optimized for offline-first speed and cloud sync.", delay: 0.4  },
               { icon: "🎨", title: "Brand & UI/UX",       desc: "Craft digital experiences that elevate your brand and convert visitors into customers.",    delay: 0.5  },
             ].map((s, i) => <ServiceCard key={i} {...s} />)}
           </div>

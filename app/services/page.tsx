@@ -9,11 +9,12 @@ import { Sparkles } from "lucide-react";
 const services = [
   { id: "machine-learning",     icon: "🧠", title: "Machine Learning",     delay: 0.1, desc: "Train custom models on your private data. From regression to complex neural networks, we build systems that learn and evolve." },
   { id: "nlp-chatbots",         icon: "💬", title: "NLP & Chatbots",        delay: 0.2, desc: "Next-gen conversational AI using RAG (Retrieval-Augmented Generation) for pinpoint accuracy in customer support." },
-  { id: "app-development",      icon: "📱", title: "Mobile Apps",           delay: 0.3, desc: "High-performance iOS & Android apps integrated with AI agents, providing seamless user experiences with real-time intelligence." },
-  { id: "computer-vision",      icon: "👁️", title: "Computer Vision",       delay: 0.4, desc: "Object detection, facial recognition, and automated quality inspection systems for industrial and security needs." },
-  { id: "ai-automation-agents", icon: "🤖", title: "AI Agents",             delay: 0.5, desc: "Autonomous agents that can navigate browsers, manage emails, and handle complex multi-step workflows 24/7." },
-  { id: "web-development",      icon: "🌐", title: "Web Development",       delay: 0.6, desc: "Ultra-fast Next.js applications with Framer Motion animations and high-conversion UI/UX design." },
-  { id: "graphic-design",       icon: "🎨", title: "Brand & UI/UX",         delay: 0.7, desc: "Premium branding kits, cinematic 3D renders, and social media assets that make your brand stand out." },
+  { id: "web-development",      icon: "🌐", title: "Web Development",       delay: 0.3, desc: "Ultra-fast Next.js applications with Framer Motion animations and high-conversion UI/UX design." },
+  { id: "app-development",      icon: "📱", title: "Mobile Apps",           delay: 0.4, desc: "High-performance iOS & Android apps integrated with AI agents, providing seamless user experiences with real-time intelligence." },
+  { id: "desktop-development",  icon: "💻", title: "Desktop Apps",          delay: 0.5, desc: "Cross-platform installable desktop software built using Electron. Optimized for local database operations (SQLite), offline accessibility, and background cloud sync." },
+  { id: "computer-vision",      icon: "👁️", title: "Computer Vision",       delay: 0.6, desc: "Object detection, facial recognition, and automated quality inspection systems for industrial and security needs." },
+  { id: "ai-automation-agents", icon: "🤖", title: "AI Agents",             delay: 0.7, desc: "Autonomous agents that can navigate browsers, manage emails, and handle complex multi-step workflows 24/7." },
+  { id: "graphic-design",       icon: "🎨", title: "Brand & UI/UX",         delay: 0.8, desc: "Premium branding kits, cinematic 3D renders, and social media assets that make your brand stand out." },
 ];
 
 export default function ServicesPage() {
