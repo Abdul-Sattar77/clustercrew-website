@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const serviceRoutes: Record<string, string> = {
@@ -9,6 +10,7 @@ const serviceRoutes: Record<string, string> = {
   "Workflow Automation": "/services#ai-automation-agents",
   "Web Development": "/services#web-development",
   "Mobile Apps": "/services#app-development",
+  "Desktop Apps": "/services#desktop-development",
   "SaaS Products": "/services#machine-learning",
   "Brand & UI/UX": "/services#graphic-design",
 };
@@ -25,7 +27,8 @@ export function ServiceCard({
   delay: number;
 }) {
   const [hovered, setHovered] = useState(false);
-  const href = serviceRoutes[title] ?? "/services";
+  const pathname = usePathname();
+  const href = pathname === "/services" ? "/contact" : (serviceRoutes[title] ?? "/services");
 
   return (
     <motion.div

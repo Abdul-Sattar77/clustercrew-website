@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring, AnimatePresence, useScroll, useTrans
 import { useEffect, useRef, useState, useCallback } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ServiceCard } from "./components/ServiceCard";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -161,49 +162,7 @@ function StatCard({ val, label, desc, i }: { val: string; label: string; desc: s
   );
 }
 
-/* ──────────────────────────────
-   SERVICE CARD
-────────────────────────────── */
-function ServiceCard({ icon, title, desc, delay }: { icon: string; title: string; desc: string; delay: number }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      className="relative p-8 rounded-3xl border border-slate-100/50 bg-white/80 hover:border-[#facc15]/40 hover:shadow-2xl hover:shadow-[#facc15]/10 backdrop-blur-sm transition-all duration-500 overflow-hidden cursor-default group"
-    >
-      <AnimatePresence>
-        {hovered && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }} 
-            animate={{ opacity: 1, scale: 1 }} 
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-gradient-to-br from-[#facc15]/10 to-transparent rounded-3xl"
-          />
-        )}
-      </AnimatePresence>
-      <motion.div
-        animate={{ scale: hovered ? 1.15 : 1, rotate: hovered ? 5 : 0 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="text-3xl mb-5 inline-block"
-      >
-        {icon}
-      </motion.div>
-      <h3 className="text-slate-900 font-black text-xl mb-3 tracking-tight">{title}</h3>
-      <p className="text-slate-600 text-sm leading-relaxed font-medium">{desc}</p>
-      <motion.div
-        animate={{ x: hovered ? 4 : 0, opacity: hovered ? 1 : 0.5 }}
-        className="mt-5 text-[#facc15] text-xs font-black uppercase tracking-widest flex items-center gap-2"
-      >
-        Learn more <span>→</span>
-      </motion.div>
-    </motion.div>
-  );
-}
+
 
 /* ──────────────────────────────
    MAIN HOME PAGE
