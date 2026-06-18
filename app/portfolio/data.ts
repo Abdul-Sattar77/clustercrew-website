@@ -14,7 +14,7 @@ export const projects: Project[] = [
     title: "Khato Ledger",
     category: "Engineering",
     img: "/images/sindhi-khato.png",
-    description: "An offline-first accounting and ledger system built as an installable desktop application via Electron and as a responsive web dashboard version. Powered by Next.js, Node.js, and Express, it utilizes a dual-database architecture (local SQLite + cloud PostgreSQL) to guarantee uninterrupted offline ledger operations with automated background cloud synchronization once internet is detected. It includes fully localized Sindhi language support (RTL layout) tailored specifically for cotton and fertilizer commodity traders."
+    description: "A premium, offline-first accounting and ledger system built as an installable desktop application via Electron and as a responsive web dashboard version. Designed specifically for agricultural, cotton, and fertilizer traders, it features a fully localized Sindhi interface (RTL layout) to make digital bookkeeping accessible. The system is engineered around a dual-database architecture: local SQLite ensures 100% operational uptime without internet connectivity, while a background sync engine uploads ledger entries to a cloud PostgreSQL database via Express APIs once internet is restored, enabling real-time remote business monitoring."
   },
   {
     title: "HireGenie",
